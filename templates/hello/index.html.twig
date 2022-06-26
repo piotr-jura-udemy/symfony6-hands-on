@@ -3,7 +3,7 @@
 {% block body %}
 <div>
   {% if messages|length > 0 %}
-    {% for message in messages %}
+    {% for message in messages|slice(0, limit) %}
       <div>{{message}}</div>
     {% endfor %}
   {% else %}
