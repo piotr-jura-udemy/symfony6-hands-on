@@ -4,7 +4,8 @@
 <div>
   {% if messages|length > 0 %}
     {% for message in messages|slice(0, limit) %}
-      <div>{{message}}</div>
+      <div>{{message.message}}</div>
+      {{ include('hello/_message.html.twig', {message: message}) }}
     {% endfor %}
   {% else %}
     There's nothing here yet!
