@@ -1,20 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MicroPostController!{% endblock %}
+{% block title %}All Posts{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Users/piotrjura/FadoAcademy/courses/symfony6-hands-on/src/Controller/MicroPostController.php'|file_link(0) }}">src/Controller/MicroPostController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/piotrjura/FadoAcademy/courses/symfony6-hands-on/templates/micro_post/index.html.twig'|file_link(0) }}">templates/micro_post/index.html.twig</a></code></li>
-    </ul>
+<div>
+  {% if posts|length > 0 %}
+    {% for post in posts %}
+      <div>
+        <a href="{{ path('app_micro_post_show', { post: post.id }) }}">
+            {{ post.title }}
+        </a>
+      </div>
+    {% endfor %}
+  {% else %}
+    There's nothing here yet!
+  {% endif %}
 </div>
 {% endblock %}
