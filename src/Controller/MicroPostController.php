@@ -47,6 +47,9 @@ class MicroPostController extends AbstractController
             $posts->add($post, true);
 
             // Add a flash
+            $this->addFlash('success', 'Your micro post have been addded.');
+
+            return $this->redirectToRoute('app_micro_post');
             // Redirect
         }
 
