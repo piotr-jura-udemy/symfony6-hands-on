@@ -2,20 +2,18 @@
 <div>{{ form_errors(form)}}</div>
 
 <div>
-  {{ form_label(form.title, 'Please enter the title') }}
-</div>
-<div>
-  {{ form_widget(form.title, {'attr': {'style': 'color: gray'}})}}
-</div>
-
-<div>
-  {{ form_label(form.text, 'Please enter the post text') }}
-</div>
-<div>
-  {{ form_widget(form.text)}}
+  {{ form_label(form.title, 'Please enter the title', {'label_attr': {'class': 'block text-sm text-gray-700 dark:text-gray-300 font-medium'}}) }}
+  {{ form_widget(form.title, {'attr': {'class': 'block w-full shadow-sm border-gray-300 dark:border-transparent dark:text-gray-800 rounded-md border p-2 mt-1 mb-2'}})}}
+  {{ form_errors(form.title) }}
 </div>
 
 <div>
-  <button type="submit">Save!</button>
+  {{ form_label(form.text, 'Please enter the post text', {'label_attr': {'class': 'block text-sm text-gray-700 dark:text-gray-300 font-medium'}}) }}
+  {{ form_widget(form.text, {'attr': {'class': 'block w-full shadow-sm border-gray-300 dark:border-transparent dark:text-gray-800 rounded-md border p-2 mt-1 mb-2'}}) }}
+  {{ form_errors(form.text) }}
+</div>
+
+<div>
+  <button type="submit" class="block w-full shadow-sm border-transparent bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-400 text-white rounded-md border p-2 mt-4 mb-2">Save!</button>
 </div>
 {{ form_end(form) }}
