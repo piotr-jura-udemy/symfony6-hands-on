@@ -12,7 +12,6 @@ use App\Repository\MicroPostRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class MicroPostController extends AbstractController
@@ -21,7 +20,7 @@ class MicroPostController extends AbstractController
     public function index(MicroPostRepository $posts): Response
     {
         return $this->render('micro_post/index.html.twig', [
-            'posts' => $posts->findAll(),
+            'posts' => $posts->findAllWithComments(),
         ]);
     }
 
