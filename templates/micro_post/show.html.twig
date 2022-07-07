@@ -8,4 +8,22 @@
 
 {% block body %}
   {{ include('micro_post/_post.html.twig', {post: post}) }}
+
+  <div class="mt-4">
+  {% for comment in post.comments %}
+    <div>
+      <div class="flex items-center">
+        <div class="inline-block bg-gray-200 dark:bg-gray-700 rounded-full text-3xl w-8 h-8 ring-2 ring-white dark:ring-gray-600 mr-2"></div>
+        <div>
+          <div class="font-medium text-gray-800 dark:text-gray-300">Author</div>
+          <div class="font-light text-gray-500 dark:text-gray-500">When</div>
+        </div>
+      </div>
+      <div class="flex">
+        <div class="border border-gray-300 dark:border-gray-600 ml-4 mr-6 pb-12"></div>
+        <div>{{ comment.text }}</div>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
 {% endblock %}

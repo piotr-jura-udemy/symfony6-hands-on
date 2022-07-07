@@ -78,7 +78,8 @@ class MicroPostController extends AbstractController
         return $this->renderForm(
             'micro_post/edit.html.twig',
             [
-                'form' => $form
+                'form' => $form,
+                'post' => $post
             ]
         );
     }
