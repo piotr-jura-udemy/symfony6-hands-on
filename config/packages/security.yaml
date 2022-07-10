@@ -20,6 +20,10 @@ security:
                 login_path: app_login
                 check_path: app_login
 
+            logout:
+                path: app_logout
+                target: app_login
+
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
 
