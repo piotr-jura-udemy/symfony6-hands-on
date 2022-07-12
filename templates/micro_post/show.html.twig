@@ -15,8 +15,8 @@
       <div class="flex items-center">
         <div class="inline-block bg-gray-200 dark:bg-gray-700 rounded-full text-3xl w-8 h-8 ring-2 ring-white dark:ring-gray-600 mr-2"></div>
         <div>
-          <div class="font-medium text-gray-800 dark:text-gray-300">Author</div>
-          <div class="font-light text-gray-500 dark:text-gray-500">When</div>
+          <div class="font-medium text-gray-800 dark:text-gray-300">{{ comment.author.email }}</div>
+          <div class="font-light text-gray-500 dark:text-gray-500">{{ comment.created | date("M j, Y")  }}</div>
         </div>
       </div>
       <div class="flex">

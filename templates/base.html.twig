@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="">
+<html class="dark">
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
@@ -34,6 +34,9 @@
                     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                     <div>
                         <a href="{{ path('app_micro_post_add') }}">Add New</a>
+                    </div>
+                    <div>
+                        <a href="{{ path('app_logout') }}">Logout</a>
                     </div>
                     {% else %}
                     <div>

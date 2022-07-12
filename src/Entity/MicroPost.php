@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\MicroPostRepository;
 use Doctrine\Common\Collections\Collection;
@@ -43,6 +44,7 @@ class MicroPost
     {
         $this->comments = new ArrayCollection();
         $this->likedBy = new ArrayCollection();
+        $this->created = new DateTime;
     }
 
     public function getId(): ?int
