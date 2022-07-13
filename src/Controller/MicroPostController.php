@@ -25,6 +25,7 @@ class MicroPostController extends AbstractController
     }
 
     #[Route('/micro-post/{post}', name: 'app_micro_post_show')]
+    #[IsGranted(MicroPost::VIEW, 'post')]
     public function showOne(MicroPost $post): Response
     {
         return $this->render('micro_post/show.html.twig', [
@@ -69,9 +70,12 @@ class MicroPostController extends AbstractController
     }
 
     #[Route('/micro-post/{post}/edit', name: 'app_micro_post_edit')]
-    #[IsGranted('ROLE_EDITOR')]
-    public function edit(MicroPost $post, Request $request, MicroPostRepository $posts): Response
-    {
+    #[IsGranted(MicroPost::EDIT, 'post')]
+    public function edit(
+        MicroPost $post,
+        Request $request,
+        MicroPostRepository $posts
+    ): Response {
         $form = $this->createForm(MicroPostType::class, $post);
         $form->handleRequest($request);
 
@@ -97,8 +101,11 @@ class MicroPostController extends AbstractController
 
     #[Route('/micro-post/{post}/comment', name: 'app_micro_post_comment')]
     #[IsGranted('ROLE_COMMENTER')]
-    public function addComment(MicroPost $post, Request $request, CommentRepository $comments): Response
-    {
+    public function addComment(
+        MicroPost $post,
+        Request $request,
+        CommentRepository $comments
+    ): Response {
         $form = $this->createForm(CommentType::class, new Comment());
         $form->handleRequest($request);
 

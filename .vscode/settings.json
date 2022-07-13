@@ -1,0 +1,29 @@
+{
+  "auto-close-tag.activationOnLanguage": [
+    "twig",
+    "xml",
+    "php",
+    "blade",
+    "ejs",
+    "jinja",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "plaintext",
+    "markdown",
+    "vue",
+    "liquid",
+    "erb",
+    "lang-cfml",
+    "cfml",
+    "HTML (EEx)",
+    "HTML (Eex)",
+    "plist"
+  ],
+  "workbench.colorTheme": "Noctis Obscuro",
+  "editor.fontFamily": "Cascadia Code",
+  "editor.fontWeight": "400",
+  "customizeUI.activityBar": "",
+  "customizeUI.titleBar": ""
+}
