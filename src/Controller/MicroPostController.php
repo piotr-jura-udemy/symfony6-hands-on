@@ -38,7 +38,7 @@ class MicroPostController extends AbstractController
         name: 'app_micro_post_add',
         priority: 2
     )]
-    #[IsGranted('IS_AUTHENTICATED_FULLY')]
+    #[IsGranted('ROLE_WRITER')]
     public function add(
         Request $request,
         MicroPostRepository $posts
