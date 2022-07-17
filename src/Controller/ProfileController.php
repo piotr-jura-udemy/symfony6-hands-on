@@ -20,7 +20,7 @@ class ProfileController extends AbstractController
     #[Route('/profile/{id}/follows', name: 'app_profile_follows')]
     public function follows(User $user): Response
     {
-        return $this->render('profile/show.html.twig', [
+        return $this->render('profile/follows.html.twig', [
             'user' => $user
         ]);
     }
@@ -28,7 +28,7 @@ class ProfileController extends AbstractController
     #[Route('/profile/{id}/followers', name: 'app_profile_followers')]
     public function followers(User $user): Response
     {
-        return $this->render('profile/show.html.twig', [
+        return $this->render('profile/followers.html.twig', [
             'user' => $user
         ]);
     }
