@@ -36,6 +36,18 @@
     </div>
 </div>
 
-<div class="mb-8"></div>
+{% embed 'shared/_tabs.html.twig' %}
+    {% block tabs %}
+        {% embed 'shared/_tab.html.twig' with { route: 'app_profile' } %}
+            {% block content %}
+                Posts <span class="px-2 rounded-md bg-gray-200 dark:bg-gray-700">{{ user.posts.count }}</span>
+            {% endblock %}
+            {% block path %}
+            {{ path('app_profile', { id: user.id }) }}
+            {% endblock %}
+        {% endembed %}
+    {% endblock %}
+{% endembed %}
+
 {{ include ('micro_post/_post_list.html.twig', { posts: user.posts }) }}
 {% endblock %}
