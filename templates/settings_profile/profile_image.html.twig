@@ -8,4 +8,16 @@
 
 {% block body %}
     {{ include('settings_profile/_settings_profile_tabs.html.twig') }}
+
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'} }) }}
+
+    {{ form_label(form.profileImage, 'Change', {'label_attr': {'class': 'shadow-sm border-transparent bg-gray-300 hover:bg-gray-400 dark:bg-gray-700 dark:hover:bg-gray-900 cursor-pointer rounded-md border p-2'}}) }}
+    {{ form_widget(form.profileImage, {'attr': {'class': 'hidden'}}) }}
+    {{ form_errors(form.profileImage) }}
+
+    <div>
+        <button type="submit" class="block w-full shadow-sm border-transparent bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-400 text-white rounded-md border p-2 mt-4 mb-2">Save Changes</button>
+    </div>
+
+    {{ form_end(form) }}
 {% endblock %}
