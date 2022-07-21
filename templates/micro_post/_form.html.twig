@@ -13,6 +13,14 @@
   {{ form_errors(form.text) }}
 </div>
 
+<div class="flex items-center mt-4">
+    {{ form_widget(form.extraPrivacy, {'attr': {'class': 'h-4 w-4 rounded border-gray border text-indigo-300 mr-2'}}) }}
+    {{ form_label(form.extraPrivacy, 'I want extra privacy', {'label_attr': {'class': 'text-sm text-gray-700 dark:text-gray-300 font-medium'}}) }}
+</div>
+<div class="text-gray-400 dark:text-gray-500 mb-4 text-sm">
+  This post can only be seen by the people that you follow.
+</div>
+
 <div>
   <button type="submit" class="block w-full shadow-sm border-transparent bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-400 text-white rounded-md border p-2 mt-4 mb-2">Save!</button>
 </div>
