@@ -1,5 +1,8 @@
 <div class="flex items-center">
     <div>
+        <div class="mb-2">
+        {{ include('shared/_avatar.html.twig', { profile: user.userProfile, size: 32 }) }}
+        </div>
         <div class="text-2xl">{{ user.userProfile.name ?? user.email }}</div>
         <div class="text-lg text-gray-500 dark:text-gray-400 font-normal">{{ user.email }}</div>
 

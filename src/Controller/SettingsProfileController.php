@@ -88,6 +88,7 @@ class SettingsProfileController extends AbstractController
 
                 $profile = $user->getUserProfile() ?? new UserProfile();
                 $profile->setImage($newFileName);
+                $user->setUserProfile($profile);
                 $users->add($user, true);
                 $this->addFlash('success', 'Your profile image was updated.');
 
